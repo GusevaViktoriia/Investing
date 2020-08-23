@@ -1,5 +1,3 @@
-import Listener.FallDownListener;
-import Listener.GrowUpListener;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
@@ -15,18 +13,18 @@ public class InvestingFrame extends JFrame{
             Container cont = getContentPane();
 
             JButton growUp = new JButton("Взлёт дня");
-            growUp.setLocation(60, 40);
+            growUp.setLocation(180, 140);
             growUp.setSize(300, 75);
-            ActionListener grow_Up = (ActionListener) new GrowUpListener(); // создаём объект-обработчик события
-            growUp.addActionListener(grow_Up);// назначаем этот обработчик кнопке
-            cont.add(growUp); // прикрепляем действие к кнопке (сработает по нажатии на неё)
+            ActionListener grow_Up = new GrowUpListener();
+            growUp.addActionListener(grow_Up);
+            cont.add(growUp);
 
-            JButton soup = new JButton("Падение дня");
-            soup.setLocation(280, 220);
-            soup.setSize(100, 25);
-            ActionListener fallDown = new FallDownListener();
-            soup.addActionListener(fallDown);
-            cont.add(soup);
+            /*JButton fallDown = new JButton("Падение дня");
+            fallDown.setLocation(280, 220);
+            fallDown.setSize(300, 75);
+            ActionListener fallDown_ = new FallDownListener();
+            fallDown.addActionListener(fallDown_);
+            cont.add(fallDown);*/
 
         }
     }
